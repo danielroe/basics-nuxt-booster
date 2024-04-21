@@ -4,7 +4,6 @@
     :src="lazySrc"
     class="nuxt-booster-iframe"
     v-bind="$attrs"
-    frameborder="0"
     @load="loaded = $event"
   />
 </template>
@@ -50,5 +49,11 @@ watch(inView, () => {
 </script>
 
 <style lang="postcss" scoped>
-/* empty */
+/*! purgecss start ignore */
+
+iframe {
+  border: none;
+}
+
+/*! purgecss end ignore */
 </style>

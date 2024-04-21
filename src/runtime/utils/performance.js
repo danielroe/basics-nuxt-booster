@@ -13,9 +13,9 @@ let customConfig = defaultConfig;
 
 export function setup(config = {}) {
   customConfig = {
-    timing: Object.assign({}, defaultConfig.timing, config.timing || {})
+    timing: { ...defaultConfig.timing, ...(config.timing || {}) }
   };
-  customConfig = Object.assign({}, defaultConfig, config);
+  customConfig = { ...defaultConfig, ...config };
 }
 
 export function hasSufficientPerformance() {
